@@ -10,7 +10,9 @@ export const signup = user => dispatch => (
     dispatch({
       type: RECEIVE_CURRENT_USER,
       user
-    })
+    })err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
 );
 
 export const login = user => dispatch => (
@@ -18,7 +20,9 @@ export const login = user => dispatch => (
     dispatch({
       type: RECEIVE_CURRENT_USER,
       user
-    })
+    })err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
   )
 );
 
